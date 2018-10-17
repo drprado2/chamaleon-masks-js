@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chamaleon Masks Example</title>
+</head>
+<body>
+    <input class="my-clas" id="my-input" name="my-input" type="text" />
+    <script src="./src/GenericNumberMask.js"></script>
+    <script>
+        let input = document.querySelector('#my-input');
+        GenericNumberMask.init(input, 
+        {
+            submitWithMask: true,
+            showPlaceholder: true,
+            reverseInput: true,
+            masks: [
+                {mask: ".***,99", validationCallback: v => console.log("My callbackfunction CPF", v)}
+                // {mask: "777.999.999-99", validationCallback: v => console.log("My callbackfunction CNPJ", v)}
+                // {mask: "(99) 9999-9999", validationCallback: v => console.log("My callbackfunction CNPJ", v)},
+                // {mask: "(99) 99999-999*", validationCallback: v => console.log("My callbackfunction CNPJ", v)}
+        ]})
+    </script>
+</body>
+</html>
