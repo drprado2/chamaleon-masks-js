@@ -1,27 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .my-container {
+            margin: 0 auto;
+            width: 60%;
+            min-width: 500px;
+        }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chamaleon Masks Example</title>
 </head>
+
 <body>
-    <input class="my-clas" id="my-input" name="my-input" type="text" />
+    <nav class="green darken-1">
+        <!-- navbar content here  -->
+    </nav>
+
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class="user-view">
+                <img style="padding-left: 25px" src="./img/logo-02.png" alt="logo marca">
+            </div>
+        </li>
+                <li><div class="divider"></div></li>
+        <li>
+            <a href="#!">First Sidebar Link</a>
+        </li>
+        <li>
+            <a href="#!">Second Sidebar Link</a>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">Dropdown
+                        <i class="material-icons">arrow_drop_down</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="#!">First</a>
+                            </li>
+                            <li>
+                                <a href="#!">Second</a>
+                            </li>
+                            <li>
+                                <a href="#!">Third</a>
+                            </li>
+                            <li>
+                                <a href="#!">Fourth</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+        <i class="material-icons">menu</i>
+    </a>
+
+    <div class="my-container">
+        <h1 class="center-align green-text text-darken-1">
+            Chamaleon Masks 
+            <br>
+            JS
+        </h1>
+        <h4>A complete and friendly JavaScript library to solve input masks problems</h4>
+        <br>
+        <br>
+        <hr />
+        <h4>About</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt sequi? Inventore laboriosam alias eaque
+            porro culpa, debitis, quo numquam ducimus distinctio non, sit illo beatae quibusdam consequatur quasi vel.</p>
+        <br>
+        <br>
+        <h4>Using</h4>
+        <br>
+        <br>
+        <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input class="my-clas validate" id="money" name="money" type="text" />
+            <label for="money">Money Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">local_phone</i>
+            <input class="my-clas" id="telephone" name="telephone" type="text" />
+            <label for="telephon">Telephone Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">all_inclusive</i>
+            <input class="my-clas" id="infinit-telephone" name="infinit-telephone" type="text" />
+            <label for="infinit-telephone">Infinite Telephone Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input class="my-clas" id="cpf" name="cpf" type="text" />
+            <label for="cpf">Brazilian CPF Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">account_balance</i>
+            <input class="my-clas" id="cnpj" name="cnpj" type="text" />
+            <label for="cnpj">Brazilian CNPJ Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input class="my-clas" id="cpf-cnpj" name="cpf-cnpj" type="text" />
+            <label for="cpf-cnpj">Brazilian Multi CPF/CNPJ Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">date_range</i>
+            <input class="my-clas" id="date" name="date" type="text" />
+            <label for="date">Brazilian Date Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">watch_later</i>
+            <input class="my-clas" id="hour" name="hour" type="text" />
+            <label for="hour">Hour Mask</label>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">hourglass_empty</i>
+            <input class="my-clas" id="date-hour" name="date-hour" type="text" />
+            <label for="date-hour">Date/Hour Mask</label>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./src/GenericNumberMask.js"></script>
     <script>
-        let input = document.querySelector('#my-input');
-        GenericNumberMask.init(input, 
-        {
-            submitWithMask: true,
-            showPlaceholder: true,
-            reverseInput: true,
-            masks: [
-                {mask: ".***,99", validationCallback: v => console.log("My callbackfunction CPF", v)}
-                // {mask: "777.999.999-99", validationCallback: v => console.log("My callbackfunction CNPJ", v)}
-                // {mask: "(99) 9999-9999", validationCallback: v => console.log("My callbackfunction CNPJ", v)},
-                // {mask: "(99) 99999-999*", validationCallback: v => console.log("My callbackfunction CNPJ", v)}
-        ]})
+        let money = document.querySelector('#money');
+        let telephone = document.querySelector('#telephone');
+        let infinitTelephone = document.querySelector('#infinit-telephone');
+        let cpf = document.querySelector('#cpf');
+        let cnpj = document.querySelector('#cnpj');
+        let cpfCnpj = document.querySelector('#cpf-cnpj');
+        let date = document.querySelector('#date');
+        let hour = document.querySelector('#hour');
+        let dateHour = document.querySelector('#date-hour');
+
+        GenericNumberMask.initOptions(money,
+            {
+                reverseInput: true,
+                masks: [
+                    { mask: ".***,99[10-50]", isMoney: true, moneyCountryMask: 'R$', validationCallback: v => console.log("My callbackfunction money", v) }
+                ]
+            });
+        GenericNumberMask.init(telephone, "(99[20-60]) 9999-9999", "(99) 99999-9999");
+        GenericNumberMask.init(infinitTelephone, "(99) 9999-999*");
+        GenericNumberMask.init(cpf, "999.999.999-99");
+        GenericNumberMask.init(cnpj, "99.999.999/9999-99");
+        GenericNumberMask.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
+        GenericNumberMask.initOptions(date, { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
+        GenericNumberMask.initOptions(hour, { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
+        GenericNumberMask.initOptions(dateHour, { masks: [{ mask: "99[1-15]/99[6-7]/9999[2018-2020] 99[13-18]:99[0-59]:99[0-59]", placeholder: 'DD/MM/YYYY HH:MM:SS' }] });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+        M.AutoInit();
     </script>
 </body>
+
 </html>
