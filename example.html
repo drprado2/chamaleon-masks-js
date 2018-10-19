@@ -8,8 +8,33 @@
     <style>
         .my-container {
             margin: 0 auto;
-            width: 60%;
-            min-width: 500px;
+            width: 80%;
+            min-width: 800px;
+            padding-left: 0px;
+            transition: padding .5s;
+        }
+        nav .sidenav-btn-trigger i{
+            font-size: 3rem;
+            height: 100%;
+            line-height: 64px;
+            display: inline-block;
+        }
+        .padding-menu {
+            padding-left: 300px;
+            transition: padding .5s;
+        }
+        ul.sidenav.sidenav-fixed {
+            transform: translate3d(-105%, 0, 0) !important;
+            transition: transform .5s;
+        }
+        ul.sidenav.sidenav-fixed.nav-menu-open{
+            transform: translate3d(0%, 0, 0) !important;
+            transition: transform .5s;
+        }
+        nav{
+            width: 100%;
+            padding-left: 0px;
+            transition: padding .5s;
         }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,14 +43,16 @@
 </head>
 
 <body>
-    <nav class="green darken-1">
-        <!-- navbar content here  -->
-    </nav>
 
-    <ul id="slide-out" class="sidenav sidenav-fixed">
+    <nav nav-menu-target="slide-out" class="padding-menu green darken-2">
+        <a href="#" data-target="slide-out" class="sidenav-btn-trigger">
+            <i class="material-icons">menu</i>
+        </a>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed nav-menu-open">
         <li>
             <div class="user-view">
-                <img style="padding-left: 25px" src="./img/logo-02.png" alt="logo marca">
+                <img style="padding-left: 25px" src="./img/logo-22.png" alt="logo marca">
             </div>
         </li>
                 <li><div class="divider"></div></li>
@@ -61,21 +88,18 @@
             </ul>
         </li>
     </ul>
-    <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
-        <i class="material-icons">menu</i>
-    </a>
 
-    <div class="my-container">
-        <h1 class="center-align green-text text-darken-1">
+    <div nav-menu-target="slide-out" class="padding-menu my-container">
+        <h1 class="center-align green-text text-darken-2">
             Chamaleon Masks 
             <br>
             JS
         </h1>
-        <h4>A complete and friendly JavaScript library to solve input masks problems</h4>
+        <h4 class="green-text">A complete and friendly JavaScript library to solve input masks problems</h4>
         <br>
         <br>
         <hr />
-        <h4>About</h4>
+        <h4 class="green-text">About</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, incidunt sequi? Inventore laboriosam alias eaque
             porro culpa, debitis, quo numquam ducimus distinctio non, sit illo beatae quibusdam consequatur quasi vel.</p>
         <br>
@@ -128,7 +152,7 @@
             <input class="my-clas" id="date-hour" name="date-hour" type="text" />
             <label for="date-hour">Date/Hour Mask</label>
         </div>
-    </div>
+    </div> 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -165,6 +189,15 @@
             var instances = M.Sidenav.init(elems);
         });
         M.AutoInit();
+
+        let btnMenu = document.querySelector('.sidenav-btn-trigger');
+        let menuId = btnMenu.getAttribute('data-target');
+        let menu = document.querySelector(`#${menuId}`);
+        btnMenu.onclick = function(){
+            menu.classList.toggle('nav-menu-open');
+            let navsDependencies = document.querySelectorAll('[nav-menu-target=slide-out');
+            navsDependencies.forEach(n => n.classList.toggle('padding-menu'));
+        }
     </script>
 </body>
 

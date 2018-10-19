@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .my-container {
+            margin: 0 auto;
+            width: 80%;
+            min-width: 800px;
+            padding-left: 0px;
+            transition: padding .5s;
+        }
+        nav .sidenav-btn-trigger i{
+            font-size: 3rem;
+            height: 100%;
+            line-height: 64px;
+            display: inline-block;
+        }
+        .padding-menu {
+            padding-left: 300px;
+            transition: padding .5s;
+        }
+        ul.sidenav.sidenav-fixed {
+            transform: translate3d(-105%, 0, 0) !important;
+            transition: transform .5s;
+        }
+        ul.sidenav.sidenav-fixed.nav-menu-open{
+            transform: translate3d(0%, 0, 0) !important;
+            transition: transform .5s;
+        }
+        nav{
+            width: 100%;
+            padding-left: 0px;
+            transition: padding .5s;
+        }
+        h1,h2,h3,h4,h5,h6 {
+            font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+            font-weight: bold;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            padding: 2.8rem 0 1.68rem 0;
+            margin: 0px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chamaleon Masks Example</title>
+</head>
+
+<body>
+
+    <nav nav-menu-target="slide-out" class="padding-menu green darken-4">
+        <a href="#" data-target="slide-out" class="sidenav-btn-trigger">
+            <i class="material-icons">menu</i>
+        </a>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed nav-menu-open">
+        <li>
+            <div class="user-view">
+                <img style="padding-left: 25px" src="./img/logo-22.png" alt="logo marca">
+            </div>
+        </li>
+                <li><div class="divider"></div></li>
+        <li>
+            <a href="#!">First Sidebar Link</a>
+        </li>
+        <li>
+            <a href="#!">Second Sidebar Link</a>
+        </li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header">Dropdown
+                        <i class="material-icons">arrow_drop_down</i>
+                    </a>
+                    <div class="collapsible-body">
+                        <ul>
+                            <li>
+                                <a href="#!">First</a>
+                            </li>
+                            <li>
+                                <a href="#!">Second</a>
+                            </li>
+                            <li>
+                                <a href="#!">Third</a>
+                            </li>
+                            <li>
+                                <a href="#!">Fourth</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="green darken-2">
+        <div nav-menu-target="slide-out" class="padding-menu my-container">
+            <h1 class="center-align white-text">
+                Chamaleon Masks 
+                <br>
+                JS
+            </h1>
+            <h4 class="white-text">A complete and friendly JavaScript library to solve input masks problems</h4>
+        </div> 
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./src/GenericNumberMask.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+        M.AutoInit();
+
+        let btnMenu = document.querySelector('.sidenav-btn-trigger');
+        let menuId = btnMenu.getAttribute('data-target');
+        let menu = document.querySelector(`#${menuId}`);
+        btnMenu.onclick = function(){
+            menu.classList.toggle('nav-menu-open');
+            let navsDependencies = document.querySelectorAll('[nav-menu-target=slide-out');
+            navsDependencies.forEach(n => n.classList.toggle('padding-menu'));
+        }
+    </script>
+</body>
+
+</html>
