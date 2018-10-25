@@ -57,11 +57,11 @@ GenericNumberMask.prototype.addMask = function(maskOptions){
 GenericNumberMask.prototype.createMaskObj = function(maskOptions){
     return {
         valueLength: maskOptions.mask.replace(/\[\d*-\d*\]/g, '').replace(this.regexInvalidChars, "").length,
-        separators: this.createArraySeparators(maskOptions), 
+        separators: this.createArraySeparators(maskOptions),
         maskString: maskOptions.mask,
         submitWithoutMask: maskOptions.submitWithoutMask,
         validationCallback: maskOptions.validationCallback,
-        isMoney: maskOptions.isMoney, 
+        isMoney: maskOptions.isMoney,
         moneyCountryMask: maskOptions.moneyCountryMask,
         placeholder: maskOptions.placeholder,
     };
@@ -71,7 +71,7 @@ GenericNumberMask.prototype.setPlaceholder = function(){
 }
 GenericNumberMask.prototype.createArraySeparators = function(maskOptions){
     if(this.reverseInput){
-        let rangeParts = maskOptions.mask.match(/([0-9\*]*\[\d*-\d*\])/g);
+        let rangeParts = maskOptions.mask.match(/([0-9\*]*\[\d*-\d*\])/g) || [];
         rangeParts.forEach(p => {
             let rangePart = /^[0-9]*(\[\d*-\d*\])/gm.exec(p)[1];
             let temp = p.replace(rangePart, '');
@@ -88,7 +88,7 @@ GenericNumberMask.prototype.createArraySeparators = function(maskOptions){
         let rangeObj = {};
         if(isInfinitPart){
             let indexSeparator = tempString.search(/[^\*]/);
-            indexSeparator = indexSeparator !== undefined && indexSeparator > -1 ? indexSeparator : tempString.length;	
+            indexSeparator = indexSeparator !== undefined && indexSeparator > -1 ? indexSeparator : tempString.length;
             let separator = tempString.substring(indexSeparator, tempString.length) || "";
             let valuePart = tempString.substring(0, indexSeparator);
             separators.push({qtdDigits: valuePart.length, separator, isInfitityPart: true});
@@ -101,7 +101,7 @@ GenericNumberMask.prototype.createArraySeparators = function(maskOptions){
             rangeObj.end = parseInt(range.substring(range.indexOf('-') + 1, range.length - 1));
         }
         let indexSeparator = tempString.search(this.regexInvalidChars);
-        indexSeparator = indexSeparator !== undefined && indexSeparator > -1 ? indexSeparator : tempString.length;	
+        indexSeparator = indexSeparator !== undefined && indexSeparator > -1 ? indexSeparator : tempString.length;
         let nextValidChar = tempString.substring(indexSeparator).search(/[0-9]/);
         let endIndexSeparator = nextValidChar < 0 ? tempString.length : indexSeparator + nextValidChar;
         let separator = tempString.substring(indexSeparator, endIndexSeparator) || "";
@@ -112,7 +112,7 @@ GenericNumberMask.prototype.createArraySeparators = function(maskOptions){
         let valuePart = tempString.substring(0, indexSeparator);
         separators.push({qtdDigits: valuePart.length, separator, isInfitityPart: false, hasRange: !!rangePart, range: rangeObj});
         tempString = tempString.substring(endIndexSeparator);
-    }	
+    }
     return separators;
 }
 GenericNumberMask.prototype.changeCurrentMask = function(newMask){
@@ -156,7 +156,7 @@ GenericNumberMask.prototype.cleanMoneyMask = function(newValue){
             case(0):
                 newValue = newValue.substring(3);
                 break;
-            case(1): 
+            case(1):
                 newValue = newValue.substring(2);
                 break;
             case(2):
@@ -206,8 +206,8 @@ GenericNumberMask.prototype.getInputStringParts = function(event, newValue) {
                 part = maskPart.separator + newValue.substring(newValue.length - maskPart.qtdDigits);
                 newValue = newValue.substring(0, newValue.length - maskPart.qtdDigits);
             }else{
-                part = this.reverseInput 
-                    ? maskPart.separator + newValue.substring(0, maskPart.qtdDigits) 
+                part = this.reverseInput
+                    ? maskPart.separator + newValue.substring(0, maskPart.qtdDigits)
                     : newValue.substring(0, maskPart.qtdDigits) + maskPart.separator;
                 newValue = newValue.substring(maskPart.qtdDigits);
             }
@@ -224,10 +224,10 @@ GenericNumberMask.prototype.getInputStringParts = function(event, newValue) {
 }
 GenericNumberMask.prototype.updateLiteralInputValue = function(newValue, isDeleteEvent){
     let diffLength = newValue.length - this.literalInputValue.length;
-    diffLength = isDeleteEvent && diffLength >= 0 ? -1 : diffLength; 
+    diffLength = isDeleteEvent && diffLength >= 0 ? -1 : diffLength;
     this.literalInputValue = diffLength < 0
-        ? this.literalInputValue.substring(0, this.literalInputValue.length + diffLength) 
-        : this.literalInputValue + newValue.substring(this.literalInputValue.length); 
+        ? this.literalInputValue.substring(0, this.literalInputValue.length + diffLength)
+        : this.literalInputValue + newValue.substring(this.literalInputValue.length);
 }
 GenericNumberMask.prototype.setCurrentMask = function(inputValue){
     let maskOfThisLength = this.masks.find(m => m.valueLength >= inputValue.length);

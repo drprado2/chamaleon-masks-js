@@ -142,15 +142,48 @@
       font-size: 1.1em;
     }
 
+    nav img {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    nav {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    nav .page-title {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    .nav-fixed-scroll {
+      height: 45px;
+      z-index: 999;
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      background-color: rgba(0,0,0,0.2) !important;
+    }
+
+    .nav-fixed-scroll .page-title{
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      font-size: 25px;
+      color: white !important;
+    }
+
+    .nav-fixed-scroll .sidenav-btn-trigger i {
+      color: white !important;
+    }
+
+    .nav-fixed-scroll img {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chameleon Masks Example</title>
+  <title>Chameleon Masks JS, Crie mascaras personalizadas para inputs HTML</title>
 </head>
 
 <body>
   <header>
-    <nav style="display: flex; flex-direction: row; align-items: center;" class="menu-dep padding-menu white">
+    <nav style="position: fixed; transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1); display: flex; flex-direction: row; align-items: center;" class="menu-dep padding-menu white">
       <a href="#" data-target="slide-out" class="sidenav-btn-trigger">
         <i class="material-icons grey-text text-darken-4">menu</i>
       </a>
@@ -212,7 +245,7 @@
           Chameleon Masks
           <br> JS
         </h1>
-        <h4 class="white-text center-align">A complete and friendly JavaScript library to solve input masks problems</h4>
+        <h4 class="white-text center-align">Uma biblioteca JS com sintaxe simples e declarativa para criação de mascaras customizáveis</h4>
         <div style="display: inline-block; width: 100%;" class="center-align btns-top">
           <a class="btn-top btn-large waves-effect waves-light btn bg-verde">
             <i class="fas fa-play right"></i>GET STARTED</a>
@@ -244,10 +277,8 @@
             <div class="card-content white-text">
               <span class="card-title center-align">Completamente Customizável</span>
               <p>
-                Chameleon Masks JS foi desenvolvido para atender a qualquer mascara de campos numéricos, com uma
-                simples
-                sintaxe declarativa você customiza sua própria mascara, por exemplo "999.999-99" seria uma mascara
-                válida.
+                Chameleon Masks JS foi desenvolvida para atender a qualquer mascara de campos numéricos, com uma
+                simples sintaxe declarativa você cria qualquer mascara.
               </p>
             </div>
           </div>
@@ -263,17 +294,18 @@
                 Nossa biblioteca possui código aberto e está disponível no <a href="#">github</a>, você pode analisar o
                 código,
                 criar um fork e fazer suas próprias alterações ou contribuir com o projeto tornando ele cada vez mais
-                rico.
+                completo.
               </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="use-cases-area row grey lighten-2">
+      <div class="use-cases-area row white">
         <div class="col s8 offset-s2">
           <h3 class="left-align">Mascaras Comuns</h4>
             <p>Com o uso de mascaras comuns você consegue ter mascara para qualquer campo númerico, como documentos
-              (CPF, CNPJ), telefones, CEPs</p>
+              (CPF, CNPJ), telefones, CEPs.</p>
+          <div class="col s8 offset-s1">
             <div class="input-field">
               <i class="material-icons prefix">assignment_ind</i>
               <input class="my-clas" id="cpf" name="cpf" type="text" />
@@ -294,33 +326,144 @@
               <input class="my-clas" id="telephone" name="telephone" type="text" />
               <label for="telephon">Telefone</label>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="use-cases-area row grey lighten-3">
+        <div class="col s8 offset-s2">
+          <h3 class="left-align">Multi Mascaras</h4>
+          <p>
+            A multi mascara é uma feature muito interessante, onde é possível colocarmos várias mascaras em um mesmo input
+            as mascaras serão apresentadas da menor para a maior, quando o input atinger o comprimento da próxima mascara ela será selecionada automaticamente.
+          </p>
+          <div class="col s8 offset-s1">
+            <div class="input-field">
+              <i class="material-icons prefix">assignment_ind</i>
+              <input class="my-clas" id="cpf-cnpj" name="cpf-cnpj" type="text" />
+              <label for="cpf-cnpj">CPF/CNPJ</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">local_phone</i>
+              <input class="my-clas" id="telephone-multi" name="telephone-multi" type="text" />
+              <label for="telephone-multi">Telefone 8/9 Dígitos</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="use-cases-area row white">
+        <div class="col s8 offset-s2">
+          <h3 class="left-align">Mascaras de Dinheiro</h4>
+          <p>
+            Através da união de 3 features (infinit, reverse, money) podemos ter mascara uma mascara de dinheiro rica e completa, onde os valores são
+            adicionados de forma reversa (centavos, centenas, milhares...) e podemos acrescentar o cifrão da moeda desejada.
+          </p>
+          <div class="col s8 offset-s1">
+            <div class="input-field">
+              <i class="material-icons prefix">monetization_on</i>
+              <input class="my-clas validate" id="money-real" name="money-real" type="text" />
+              <label for="money-real">Dinheiro Reais R$</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">monetization_on</i>
+              <input class="my-clas validate" id="money-dolar" name="money-dolar" type="text" />
+              <label for="money-dollar">Dinheiro Dolar $</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="use-cases-area row grey lighten-3">
+        <div class="col s8 offset-s2">
+          <h3 class="left-align">Limitar Valores Mascaras</h4>
+          <p>
+            Com a feature de limitar valores podemos por exemplo em um input de data não aceitar nos dias valores menores que 1 e maiores que 31,
+            e para limitar o valor aceito é extremamente simples basta acrescentarmos [inicio-fim] ao lado do bloco da mascara, Chameleon não permitira
+            que o usuário insira valores fora desse límite, e ainda chamará uma função de callback quando isso ocorrer.
+          </p>
+          <div class="col s8 offset-s1">
+            <div class="input-field">
+              <i class="material-icons prefix">assignment_ind</i>
+              <input class="my-clas" id="cpf" name="cpf" type="text" />
+              <label for="cpf">Reais</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">account_balance</i>
+              <input class="my-clas" id="cnpj" name="cnpj" type="text" />
+              <label for="cnpj">Dolares</label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </main>
+  <footer class="page-footer padding-menu menu-dep grey darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Chameleon Masks JS</h5>
+            <p class="grey-text text-lighten-4">
+                <i class="material-icons grey-text text-lighten-4 tiny" style="padding-right: 5px">email</i>Contato: drprado2@gmail.com <br>
+                <i class="fab fa-github left grey-text text-lighten-4 tiny" style="margin-right: 0px; padding-right: 5px; transform: translateY(3px);"></i>Github: https://github.com/drprado2/chamaleon-masks-js <br>
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links Úteis</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Customizar minha própria mascara</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">CPF/CNPJ/CEP/Telefone</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Data/Hora</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Multi Mascaras</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Mascara Reversa</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Mascara para Dinheiro</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Mascara com limite de valores</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Todas as opções aceitas pelas mascaras</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2018 Todos os direitos reservados Chameleon Masks JS
+        </div>
+      </div>
+    </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./src/GenericNumberMask.js"></script>
   <script>
     M.AutoInit();
+    window.addEventListener('scroll', function(e){
+      if(window.pageYOffset > 10)
+        document.querySelector('nav').classList.add('nav-fixed-scroll');
+      else
+        document.querySelector('nav').classList.remove('nav-fixed-scroll');
+		});
 
-    // let money = document.querySelector('#money');
+    let reais = document.querySelector('#money-real');
+    let dolar = document.querySelector('#money-dolar');
     let telephone = document.querySelector('#telephone');
-    // let infinitTelephone = document.querySelector('#infinit-telephone');
+    let telephoneMulti = document.querySelector('#telephone-multi');
     let cpf = document.querySelector('#cpf');
     let cnpj = document.querySelector('#cnpj');
     let cep = document.querySelector('#cep');
-    // let cpfCnpj = document.querySelector('#cpf-cnpj');
+    let cpfCnpj = document.querySelector('#cpf-cnpj');
     // let date = document.querySelector('#date');
     // let hour = document.querySelector('#hour');
     // let dateHour = document.querySelector('#date-hour');
 
-    GenericNumberMask.init(telephone, "(99[20-60]) 9999-9999", "(99) 99999-9999");
+    GenericNumberMask.initOptions(reais,
+    {
+        reverseInput: true,
+        masks: [
+            { mask: ".***,99", isMoney: true, moneyCountryMask: 'R$' }
+        ]
+    });
+    GenericNumberMask.init(telephone, "(99) 9999-99999");
+    GenericNumberMask.init(telephoneMulti, "(99) 9999-9999", "(99) 99999-9999");
     // GenericNumberMask.init(infinitTelephone, "(99) 9999-999*");
     GenericNumberMask.init(cpf, "999.999.999-99");
     GenericNumberMask.init(cnpj, "99.999.999/9999-99");
     GenericNumberMask.init(cep, "99999-999");
-    // GenericNumberMask.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
+    GenericNumberMask.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
     // GenericNumberMask.initOptions(date, { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
     // GenericNumberMask.initOptions(hour, { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
     // GenericNumberMask.initOptions(dateHour, { masks: [{ mask: "99[1-15]/99[6-7]/9999[2018-2020] 99[13-18]:99[0-59]:99[0-59]", placeholder: 'DD/MM/YYYY HH:MM:SS' }] });
