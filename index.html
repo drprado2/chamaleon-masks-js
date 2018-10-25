@@ -230,8 +230,8 @@
               <span class="card-title center-align">Apenas JS</span>
               <p>
                 A biblíoteca foi desenvolvida apenas com ECMA Script, ou seja ela é
-                <strong>livre de Jquery</strong>, ela possui um Babel configurado para gerar um código compatível com
-                a maioria dos browsers, para tentar se encaixar em qualquer projeto.
+                <strong>livre de Jquery</strong>, ela possui Babel configurado para gerar um código compatível com
+                a maioria dos browsers para se encaixar em qualquer projeto.
               </p>
             </div>
           </div>
@@ -239,30 +239,62 @@
         <div class="card-wrapper">
           <div class="card grey darken-4">
             <div class="card-image">
-              <i class="material-icons large">code</i>
+              <i class="fas fa-cut"></i>
             </div>
             <div class="card-content white-text">
-              <span class="card-title center-align">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                I require little markup to use effectively.</p>
+              <span class="card-title center-align">Completamente Customizável</span>
+              <p>
+                Chameleon Masks JS foi desenvolvido para atender a qualquer mascara de campos numéricos, com uma
+                simples
+                sintaxe declarativa você customiza sua própria mascara, por exemplo "999.999-99" seria uma mascara
+                válida.
+              </p>
             </div>
           </div>
         </div>
         <div class="card-wrapper">
           <div class="card grey darken-4">
             <div class="card-image">
-              <i class="material-icons large">code</i>
+              <i class="fab fa-github-alt"></i>
             </div>
             <div class="card-content white-text">
-              <span class="card-title center-align">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because
-                I require little markup to use effectively.</p>
+              <span class="card-title center-align">Código Aberto</span>
+              <p>
+                Nossa biblioteca possui código aberto e está disponível no <a href="#">github</a>, você pode analisar o
+                código,
+                criar um fork e fazer suas próprias alterações ou contribuir com o projeto tornando ele cada vez mais
+                rico.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="use-cases-area row padding-menu menu-dep grey lighten-2">
-        <h2></h2>
+      <div class="use-cases-area row grey lighten-2">
+        <div class="col s8 offset-s2">
+          <h3 class="left-align">Mascaras Comuns</h4>
+            <p>Com o uso de mascaras comuns você consegue ter mascara para qualquer campo númerico, como documentos
+              (CPF, CNPJ), telefones, CEPs</p>
+            <div class="input-field">
+              <i class="material-icons prefix">assignment_ind</i>
+              <input class="my-clas" id="cpf" name="cpf" type="text" />
+              <label for="cpf">CPF</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">account_balance</i>
+              <input class="my-clas" id="cnpj" name="cnpj" type="text" />
+              <label for="cnpj">CNPJ</label>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-map-marked-alt prefix"></i>
+              <input class="my-clas" id="cep" name="cep" type="text" />
+              <label for="cep">CEP</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix">local_phone</i>
+              <input class="my-clas" id="telephone" name="telephone" type="text" />
+              <label for="telephon">Telefone</label>
+            </div>
+        </div>
       </div>
     </div>
   </main>
@@ -270,15 +302,28 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="./src/GenericNumberMask.js"></script>
   <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var elems = document.querySelectorAll('.sidenav');
-    //     var instances = M.Sidenav.init(elems);
-    // });
     M.AutoInit();
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     var elems = document.querySelectorAll('.parallax');
-    //     var instances = M.Parallax.init(elems);
-    // });
+
+    // let money = document.querySelector('#money');
+    let telephone = document.querySelector('#telephone');
+    // let infinitTelephone = document.querySelector('#infinit-telephone');
+    let cpf = document.querySelector('#cpf');
+    let cnpj = document.querySelector('#cnpj');
+    let cep = document.querySelector('#cep');
+    // let cpfCnpj = document.querySelector('#cpf-cnpj');
+    // let date = document.querySelector('#date');
+    // let hour = document.querySelector('#hour');
+    // let dateHour = document.querySelector('#date-hour');
+
+    GenericNumberMask.init(telephone, "(99[20-60]) 9999-9999", "(99) 99999-9999");
+    // GenericNumberMask.init(infinitTelephone, "(99) 9999-999*");
+    GenericNumberMask.init(cpf, "999.999.999-99");
+    GenericNumberMask.init(cnpj, "99.999.999/9999-99");
+    GenericNumberMask.init(cep, "99999-999");
+    // GenericNumberMask.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
+    // GenericNumberMask.initOptions(date, { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
+    // GenericNumberMask.initOptions(hour, { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
+    // GenericNumberMask.initOptions(dateHour, { masks: [{ mask: "99[1-15]/99[6-7]/9999[2018-2020] 99[13-18]:99[0-59]:99[0-59]", placeholder: 'DD/MM/YYYY HH:MM:SS' }] });
 
     let btnMenu = document.querySelector('.sidenav-btn-trigger');
     let menuId = btnMenu.getAttribute('data-target');
