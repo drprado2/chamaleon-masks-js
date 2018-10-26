@@ -14,43 +14,6 @@
       padding-left: 0px;
     }
 
-    .menu-dep {
-      transition: padding .5s;
-    }
-
-    nav .sidenav-btn-trigger i {
-      font-size: 3rem;
-    }
-
-    .padding-menu {
-      padding-left: 300px;
-      transition: padding .5s;
-    }
-
-    ul.sidenav.sidenav-fixed {
-      transform: translate3d(-105%, 0, 0) !important;
-      transition: transform .5s;
-    }
-
-    ul.sidenav.sidenav-fixed.nav-menu-open {
-      transform: translate3d(0%, 0, 0) !important;
-      transition: transform .5s;
-    }
-
-    nav {
-      width: 100%;
-      padding-left: 0px;
-      transition: padding .5s;
-    }
-
-    ul.sidenav>li.active {
-      background-color: #4caf50;
-    }
-
-    ul.sidenav>li.active>a {
-      color: #fff;
-    }
-
     .bg-verde {
       background-color: #4caf50 !important;
       color: #fff !important;
@@ -78,18 +41,9 @@
       font-weight: 400;
     }
 
-    .page-title {
-      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      font-weight: bold;
-      font-style: normal;
-      -webkit-font-smoothing: antialiased;
-      padding: 2.8rem 0 1.68rem 0;
-      margin: 0px;
-      font-size: 2rem;
-    }
-
     .btn-top {
       font-size: 1.5rem;
+      transition: all .4s;
     }
 
     .btns-top a {
@@ -142,16 +96,37 @@
       font-size: 1.1em;
     }
 
-    nav img {
-      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
-    }
-
     nav {
       transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      height: 74px;
     }
 
-    nav .page-title {
-      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    nav img {
+      margin: 0px 10px;
+    }
+
+    nav .nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .brand-logo {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      height: 100%;
+      position: static;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
 
     .nav-fixed-scroll {
@@ -159,9 +134,11 @@
       z-index: 999;
       transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
       background-color: rgba(0,0,0,0.6) !important;
+      background-color: rgba(76,175,80, 0.6) !important;
+      position: fixed;
     }
 
-    .nav-fixed-scroll .page-title{
+    .nav-fixed-scroll .brand-logo{
       transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
       font-size: 25px;
       color: white !important;
@@ -175,6 +152,73 @@
       transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
     }
 
+    .no-padding {
+      padding: 0px !important;
+    }
+
+    .btn-top:hover{
+      background-color: #66bb6a !important;
+      transition: all .4s;
+    }
+
+    pre, code {
+      font-family: monospace, monospace;
+    }
+    pre {
+      overflow: auto;
+      background-color: #FCFDFC;
+      background-repeat: repeat-y;
+      background-position: 0 -1rem;
+      background-size: auto 4rem;
+      overflow: hidden;
+      resize: horizontal;
+      min-width: 100%
+    }
+
+    pre[class*="language-"]:before {
+      position: absolute;
+      padding: 1px 5px;
+      top: 0;
+      left: 0;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #555;
+      content: attr(class);
+      font-size: .9rem;
+      border: solid 1px rgba(51,51,51,0.12);
+      border-top: none;
+      border-left: none;
+    }
+
+    pre > code {
+      display: block;
+      padding: 1rem;
+      word-wrap: normal;
+    }
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+      color: black;
+      /* text-shadow: 0 1px white; */
+      font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      line-height: 1.4;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+      position: relative;
+      font-size: 1.1rem;
+      background-color: #e0e0e0;
+    }
+
   </style>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -183,60 +227,16 @@
 
 <body>
   <header>
-    <nav style="position: fixed; transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1); display: flex; flex-direction: row; align-items: center;" class="menu-dep padding-menu white">
-      <a href="#" data-target="slide-out" class="sidenav-btn-trigger">
-        <i class="material-icons grey-text text-darken-4">menu</i>
-      </a>
-      <div style="display: inline-block; width: 100%; text-align: center; flex-grow: 1;">
-        <span class="page-title grey-text text-darken-4">Chameleon Masks JS</span>
-      </div>
-      <div style="display: flex; align-items: center;">
-        <img src="./img/brazil-flag.svg" alt="Brazil Flag" width="50px" height="35px">
-        <img src="./img/eua-flag.svg" alt="Brazil Flag" width="50px" height="35px">
-
+    <nav class="bg-verde #01579b">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Chameleon JS</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
       </div>
     </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed nav-menu-open">
-      <li>
-        <div class="user-view">
-          <img style="padding-left: 25px" src="./img/logo-02.png" alt="logo marca">
-        </div>
-      </li>
-      <li>
-        <div class="divider"></div>
-      </li>
-      <li class="active">
-        <a href="#!">Home</a>
-      </li>
-      <li>
-        <a href="#!">Second Sidebar Link</a>
-      </li>
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">Dropdown
-              <i class="material-icons">arrow_drop_down</i>
-            </a>
-            <div class="collapsible-body">
-              <ul>
-                <li>
-                  <a href="#!">First</a>
-                </li>
-                <li>
-                  <a href="#!">Second</a>
-                </li>
-                <li>
-                  <a href="#!">Third</a>
-                </li>
-                <li>
-                  <a href="#!">Fourth</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
   </header>
   <main>
     <div class="padding-menu menu-dep">
@@ -247,9 +247,9 @@
         </h1>
         <h4 class="white-text center-align">Uma biblioteca JS com sintaxe simples e declarativa para criação de mascaras customizáveis</h4>
         <div style="display: inline-block; width: 100%;" class="center-align btns-top">
-          <a class="btn-top btn-large waves-effect waves-light btn bg-verde">
+          <a class="btn-top btn-large waves-effect waves-light btn green">
             <i class="fas fa-play right"></i>GET STARTED</a>
-          <a class="btn-top btn-large waves-effect waves-light btn bg-verde">
+          <a class="btn-top btn-large waves-effect waves-light btn green">
             <i class="fab fa-github right"></i>GITHUB</a>
         </div>
       </div>
@@ -305,7 +305,7 @@
           <h3 class="left-align">Mascaras Comuns</h4>
             <p>Com o uso de mascaras comuns você consegue ter mascara para qualquer campo númerico, como documentos
               (CPF, CNPJ), telefones, CEPs.</p>
-          <div class="col s8 offset-s1">
+          <div class="col s10 no-padding">
             <div class="input-field">
               <i class="material-icons prefix">assignment_ind</i>
               <input class="my-clas" id="cpf" name="cpf" type="text" />
@@ -324,19 +324,19 @@
             <div class="input-field">
               <i class="material-icons prefix">local_phone</i>
               <input class="my-clas" id="telephone" name="telephone" type="text" />
-              <label for="telephon">Telefone</label>
+              <label for="telephone">Telefone</label>
             </div>
           </div>
         </div>
       </div>
-      <div class="use-cases-area row grey lighten-3">
+      <div class="use-cases-area row white">
         <div class="col s8 offset-s2">
           <h3 class="left-align">Multi Mascaras</h4>
           <p>
             A multi mascara é uma feature muito interessante, onde é possível colocarmos várias mascaras em um mesmo input
             as mascaras serão apresentadas da menor para a maior, quando o input atinger o comprimento da próxima mascara ela será selecionada automaticamente.
           </p>
-          <div class="col s8 offset-s1">
+          <div class="col s10 no-padding">
             <div class="input-field">
               <i class="material-icons prefix">assignment_ind</i>
               <input class="my-clas" id="cpf-cnpj" name="cpf-cnpj" type="text" />
@@ -347,6 +347,14 @@
               <input class="my-clas" id="telephone-multi" name="telephone-multi" type="text" />
               <label for="telephone-multi">Telefone 8/9 Dígitos</label>
             </div>
+            <pre class="language-javascript">
+                <code class="language-javascript">
+    Chameleon.init(cpf, "999.999.999-99");
+    Chameleon.init(cnpj, "99.999.999/9999-99");
+    Chameleon.init(cep, "99999-999");
+    Chameleon.init(telephone, "(99) 9999-9999");
+                </code>
+                </pre>
           </div>
         </div>
       </div>
@@ -357,7 +365,7 @@
             Através da união de 3 features (infinit, reverse, money) podemos ter mascara uma mascara de dinheiro rica e completa, onde os valores são
             adicionados de forma reversa (centavos, centenas, milhares...) e podemos acrescentar o cifrão da moeda desejada.
           </p>
-          <div class="col s8 offset-s1">
+          <div class="col s10 no-padding">
             <div class="input-field">
               <i class="material-icons prefix">monetization_on</i>
               <input class="my-clas validate" id="money-real" name="money-real" type="text" />
@@ -366,12 +374,12 @@
             <div class="input-field">
               <i class="material-icons prefix">monetization_on</i>
               <input class="my-clas validate" id="money-dolar" name="money-dolar" type="text" />
-              <label for="money-dollar">Dinheiro Dolar $</label>
+              <label for="money-dolar">Dinheiro Dolar $</label>
             </div>
           </div>
         </div>
       </div>
-      <div class="use-cases-area row grey lighten-3">
+      <div class="use-cases-area row white">
         <div class="col s8 offset-s2">
           <h3 class="left-align">Limitar Valores Mascaras</h4>
           <p>
@@ -379,7 +387,7 @@
             e para limitar o valor aceito é extremamente simples basta acrescentarmos [inicio-fim] ao lado do bloco da mascara, Chameleon não permitira
             que o usuário insira valores fora desse límite, e ainda chamará uma função de callback quando isso ocorrer.
           </p>
-          <div class="col s8 offset-s1">
+          <div class="col s10 no-padding">
           <div class="input-field">
               <i class="material-icons prefix">date_range</i>
               <input class="my-clas" id="date" name="date" type="text" />
@@ -393,14 +401,14 @@
           </div>
         </div>
       </div>
-      <div class="use-cases-area row grey lighten-3">
+      <div class="use-cases-area row white">
         <div class="col s8 offset-s2">
           <h3 class="left-align">Mascara Infinita</h4>
           <p>
             Com a mascara infinita podemos montar uma mascara que aceitará valores infinitos, porém cada vez que fechar um bloco
             ela colocara nossa mascara, note que usamos essa opção com a mascara de dinheiro já que aceita infinitos valores.
           </p>
-          <div class="col s8 offset-s1">
+          <div class="col s10 no-padding">
           <div class="input-field">
               <i class="material-icons prefix">phone</i>
               <input class="my-clas" id="infinit-phone" name="infinit-phone" type="text" />
