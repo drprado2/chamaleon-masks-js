@@ -1,3 +1,5 @@
+import regexExpressions from './regex-expressions';
+
 const MaskAplicator = function(input, reverseInput, submitWithMask){
   this.originalInput = input;
   this.input = input;
@@ -5,6 +7,7 @@ const MaskAplicator = function(input, reverseInput, submitWithMask){
   this.submitWithMask = submitWithMask;
   this.createCloneInput();
   this.literalInputValue = "";
+
 }
 MaskAplicator.prototype.applyMoneyMask = function(mask, value){
   if(!mask.isMoney)
@@ -127,3 +130,5 @@ MaskAplicator.prototype.createCloneInput = function(){
   this.originalInput.parentElement.insertBefore(cloneInput, this.originalInput.nextSibling);
   this.input = cloneInput;
 }
+
+export default MaskAplicator;

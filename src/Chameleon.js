@@ -1,3 +1,6 @@
+import MaskHandler from './MaskHandler';
+import {DEFAULT_OPTIONS, DEFAULT_MASK_CONFIG} from './defaultValues';
+
 const Chameleon = {
   initOptions : function(input, options=DEFAULT_OPTIONS){
     if(Object.getPrototypeOf(input) == String.prototype)
@@ -12,3 +15,5 @@ const Chameleon = {
     new MaskHandler(input, options);
   }
 };
+
+export default Chameleon;

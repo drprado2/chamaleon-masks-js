@@ -1,3 +1,6 @@
+import regexExpressions from './regex-expressions';
+import {DEFAULT_MASK_CONFIG} from './defaultValues';
+
 const Mask = function(maskConfig, reverseInput){
   let config = maskConfig instanceof Object
     ? {...DEFAULT_MASK_CONFIG, placeholder: maskConfig.mask.replace(regexExpressions.RANGES, ''), ...maskConfig}
@@ -56,3 +59,5 @@ Mask.prototype.createArraySeparators = function(maskOptions, reverseInput){
   }
   return separators;
 }
+
+export default Mask;

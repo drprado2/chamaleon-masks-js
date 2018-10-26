@@ -1,8 +1,13 @@
+import MaskAplicator from './MaskAplicator';
+import Mask from './Mask';
+import regexExpressions from './regex-expressions';
+import {DEFAULT_OPTIONS, DEFAULT_MASK_CONFIG} from './defaultValues';
+
 const MaskHandler = function(input, options=DEFAULT_OPTIONS){
   if(!input)
       throw new Error("Should be passed a valid input!")
   options = options instanceof Object ? {...DEFAULT_OPTIONS, ...options} : DEFAULT_OPTIONS;
-  options.masks = options.masks.map(m => ({...DEFAULT_MASK_CONFIG, placeholder: m.mask.replace(/\[\d*-\d*\]/g, ''), ...m}));
+  options.masks = options.masks.map(m => ({...DEFAULT_MASK_CONFIG, placeholder: m.mask.replace(regexExpressions.RANGES, ''), ...m}));
   this.maskAplicator = new MaskAplicator(input, options.reverseInput, options.submitWithMask);
   this.input = input;
   this.masks = [];
@@ -39,3 +44,5 @@ MaskHandler.prototype.updateCurrentMask = function(inputValue){
   maskOfThisLength = maskOfThisLength ? maskOfThisLength : this.masks[this.masks.length - 1];
   this.currentMask = maskOfThisLength;
 }
+
+export default MaskHandler;

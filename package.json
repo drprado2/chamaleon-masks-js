@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-dir dist",
+    "webpack": "webpack",
+    "dev": "webpack --mode development",
+    "watch": "webpack -w --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -44,6 +47,8 @@
     "@babel/plugin-transform-template-literals": "^7.0.0",
     "@babel/plugin-transform-typeof-symbol": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
-    "babel-preset-minify": "^0.5.0"
+    "babel-preset-minify": "^0.5.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
   }
 }
