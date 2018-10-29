@@ -33,12 +33,3 @@ Chameleon.init(cep, "99999-999");
 Chameleon.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
 Chameleon.initOptions(date, { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
 Chameleon.initOptions(hour, { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
-
-let btnMenu = document.querySelector('.sidenav-btn-trigger');
-let menuId = btnMenu.getAttribute('data-target');
-let menu = document.querySelector(`#${menuId}`);
-btnMenu.onclick = function () {
-  menu.classList.toggle('nav-menu-open');
-  let navsDependencies = document.querySelectorAll('.menu-dep');
-  navsDependencies.forEach(n => n.classList.toggle('padding-menu'));
-}
