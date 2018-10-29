@@ -21,7 +21,13 @@ let hour = document.querySelector('#hour');
 let infinitPhone = document.querySelector('#infinit-phone');
 let infinit = document.querySelector('#infinit');
 
-Chameleon.initOptions('#money-real', { reverseInput: true, masks: [{ mask: ".***,99", isMoney: true, moneyCountryMask: 'R$' }] });
+Chameleon.initOptions('#money-real',
+{
+  reverseInput: true,
+  masks: [
+    { mask: ".***,99", isMoney: true, moneyCountryMask: 'R$' }
+  ]
+});
 Chameleon.initOptions(dolar, { reverseInput: true, masks: [{ mask: ",***.99", isMoney: true, moneyCountryMask: '$' }] });
 Chameleon.init(telephone, "(99) 9999-99999");
 Chameleon.init(telephoneMulti, "(99) 9999-9999", "(99) 99999-9999");
