@@ -123,10 +123,28 @@
       margin-left: 10px;
     }
 
-    nav ul {
+    .nav-wrapper > ul {
       height: 100%;
       display: flex;
       align-items: center;
+    }
+
+    .nav-wrapper > ul > li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-wrapper > ul > li a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .nav-wrapper > ul > li a:focus {
+      outline: none;
+      outline-color: transparent;
+      outline-style: none;
+      outline-width: 0px;
     }
 
     .nav-fixed-scroll {
@@ -182,6 +200,10 @@
       padding-bottom: 0px !important;
     }
 
+    #nav-mobile {
+      margin-right: 15px;
+    }
+
   </style>
   <link href="./prism.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -190,14 +212,25 @@
 </head>
 
 <body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Customizing</a></li>
+    <li><a href="#!">CPF/CNPJ/CEP/Phone</a></li>
+    <li><a href="#!">Date/Time</a></li>
+    <li><a href="#!">Multi Masks</a></li>
+    <li><a href="#!">Reverse Mask</a></li>
+    <li><a href="#!">Money Mask</a></li>
+    <li><a href="#!">Limited Mask</a></li>
+    <li><a href="#!">All Options</a></li>
+  </ul>
   <header>
     <nav class="bg-verde #01579b">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Chameleon JS</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
+          <li class="active"><a href="sass.html">Home</a></li>
+          <li><a href="badges.html">Get Started</a></li>
+          <li><a href="badges.html">The Team</a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Documentações<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
     </nav>
@@ -265,12 +298,12 @@
           </div>
         </div>
       </div>
-      <div class="use-cases-area row white">
-        <div class="col s8 offset-s2">
+      <div class="use-cases-area row white container">
+        <div class="col m10 offset-m1 s12 no-padding">
           <h3 class="left-align">Mascaras Comuns</h4>
             <p>Com o uso de mascaras comuns você consegue ter mascara para qualquer campo númerico, como documentos
               (CPF, CNPJ), telefones, CEPs.</p>
-            <div class="col s10 no-padding">
+            <div>
               <div class="input-field">
                 <i class="material-icons prefix">assignment_ind</i>
                 <input class="my-clas" id="cpf" name="cpf" type="text" />
@@ -300,8 +333,8 @@ Chameleon.init('#my-telephone-input-selector', "(99) 9999-9999");</code>
             </div>
         </div>
       </div>
-      <div class="use-cases-area row white">
-        <div class="col s8 offset-s2">
+      <div class="use-cases-area container row white">
+        <div class="col m10 offset-m1 s12 no-padding">
           <h3 class="left-align">Multi Mascaras</h4>
             <p>
               A multi mascara é uma feature muito interessante, onde é possível colocarmos várias mascaras em um mesmo
@@ -309,7 +342,7 @@ Chameleon.init('#my-telephone-input-selector', "(99) 9999-9999");</code>
               as mascaras serão apresentadas da menor para a maior, quando o input atinger o comprimento da próxima
               mascara ela será selecionada automaticamente.
             </p>
-            <div class="col s10 no-padding">
+            <div>
               <div class="input-field">
                 <i class="material-icons prefix">assignment_ind</i>
                 <input class="my-clas" id="cpf-cnpj" name="cpf-cnpj" type="text" />
@@ -327,8 +360,8 @@ Chameleon.init('#my-multi-phone-input-select', "(99) 9999-9999", "(99) 99999-999
             </div>
         </div>
       </div>
-      <div class="use-cases-area row white">
-        <div class="col s8 offset-s2">
+      <div class="use-cases-area row white container">
+        <div class="col m10 offset-m1 s12 no-padding">
           <h3 class="left-align">Mascaras de Dinheiro</h4>
             <p>
               Através da união de 3 features (infinit, reverse, money) podemos ter mascara uma mascara de dinheiro rica
@@ -336,7 +369,7 @@ Chameleon.init('#my-multi-phone-input-select', "(99) 9999-9999", "(99) 99999-999
               adicionados de forma reversa (centavos, centenas, milhares...) e podemos acrescentar o cifrão da moeda
               desejada.
             </p>
-            <div class="col s10 no-padding">
+            <div>
               <div class="input-field">
                 <i class="material-icons prefix">monetization_on</i>
                 <input class="my-clas validate" id="money-real" name="money-real" type="text" />
@@ -367,8 +400,8 @@ Chameleon.initOptions('#my-dolars-input-selector',
             </div>
         </div>
       </div>
-      <div class="use-cases-area row white">
-        <div class="col s8 offset-s2">
+      <div class="use-cases-area row white container">
+        <div class="col m10 offset-m1 s12 no-padding">
           <h3 class="left-align">Limitar Valores Mascaras</h4>
             <p>
               Com a feature de limitar valores podemos por exemplo em um input de data não aceitar nos dias valores
@@ -378,7 +411,7 @@ Chameleon.initOptions('#my-dolars-input-selector',
               que o usuário insira valores fora desse límite, e ainda chamará uma função de callback quando isso
               ocorrer.
             </p>
-            <div class="col s10 no-padding">
+            <div >
               <div class="input-field">
                 <i class="material-icons prefix">date_range</i>
                 <input class="my-clas" id="date" name="date" type="text" />
@@ -408,16 +441,17 @@ Chameleon.initOptions('#my-hour-selector',
             </div>
         </div>
       </div>
-      <div class="use-cases-area row white">
-        <div class="col s8 offset-s2">
+      <div class="use-cases-area row white container">
+        <div class="col m10 offset-m1 s12 no-padding">
           <h3 class="left-align">Mascara Infinita</h4>
             <p>
-              Com a mascara infinita podemos montar uma mascara que aceitará valores infinitos apenas usando o caracter * (asterísco), porém cada vez que
+              Com a mascara infinita podemos montar uma mascara que aceitará valores infinitos apenas usando o caracter
+              * (asterísco), porém cada vez que
               fechar um bloco
               ela colocara nossa mascara, note que usamos essa opção com a mascara de dinheiro já que aceita infinitos
               valores.
             </p>
-            <div class="col s10 no-padding">
+            <div>
               <div class="input-field">
                 <i class="material-icons prefix">phone</i>
                 <input class="my-clas" id="infinit-phone" name="infinit-phone" type="text" />
