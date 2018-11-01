@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="icon" href="./img/favicon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <style>
+
+    .bg-verde {
+      background-color: #4caf50 !important;
+      color: #fff !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      padding: 2.8rem 0 1.68rem 0;
+      margin: 0px;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 400;
+    }
+
+    strong {
+      text-decoration: underline;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+
+    nav {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      height: 74px;
+    }
+
+    nav img {
+      margin: 0px 10px;
+    }
+
+    nav .nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .brand-logo {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      height: 100%;
+      position: static;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+    .nav-wrapper > ul {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-wrapper > ul > li {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-wrapper > ul > li a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .nav-wrapper > ul > li a:focus {
+      outline: none;
+      outline-color: transparent;
+      outline-style: none;
+      outline-width: 0px;
+    }
+
+    .nav-fixed-scroll {
+      height: 45px;
+      z-index: 999;
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      background-color: rgba(0,0,0,0.6) !important;
+      background-color: rgba(76,175,80, 0.6) !important;
+      position: fixed;
+    }
+
+    .nav-fixed-scroll .brand-logo{
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+      font-size: 25px;
+      color: white !important;
+    }
+
+    .nav-fixed-scroll .sidenav-btn-trigger i {
+      color: white !important;
+    }
+
+    .nav-fixed-scroll img {
+      transition: all 500ms cubic-bezier(0.55, 0, 0.1, 1);
+    }
+
+    .no-padding {
+      padding: 0px !important;
+    }
+
+    .btn-top:hover{
+      background-color: #66bb6a !important;
+      transition: all .4s;
+    }
+
+    pre[class*="language-"]:before {
+      position: absolute;
+    padding: 1px 5px;
+    background: #e8e6e3;
+    top: 0;
+    left: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #555;
+    content: attr(data-language);
+    font-size: .9rem;
+    border: solid 1px rgba(51,51,51,0.12);
+    border-top: none;
+    border-left: none;
+    }
+
+    pre[class*="language-"]{
+      padding-top: 33px !important;
+      padding-bottom: 0px !important;
+    }
+
+    #nav-mobile {
+      margin-right: 15px;
+    }
+
+    .title-complement{
+      font-size: 18px;
+      font-weight: 300;
+      color: #6d6d6d;
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    }
+
+  </style>
+  <link href="./prism.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chameleon Masks JS, Crie mascaras personalizadas para inputs HTML</title>
+</head>
+
+<body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Customizing</a></li>
+    <li><a href="#!">CPF/CNPJ/CEP/Phone</a></li>
+    <li><a href="#!">Date/Time</a></li>
+    <li><a href="#!">Multi Masks</a></li>
+    <li><a href="#!">Reverse Mask</a></li>
+    <li><a href="#!">Money Mask</a></li>
+    <li><a href="#!">Limited Mask</a></li>
+    <li><a href="#!">All Options</a></li>
+  </ul>
+  <header>
+    <nav class="bg-verde #01579b">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Chameleon JS</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="getting-started.html">Get Started</a></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Documentações<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="row container">
+      <div class="col-m-12">
+          <h1 class="center">Getting Started</h1>
+          <p class="center title-complement">Learn how to easily start using Chameleon Mask in your project.</p>
+          <hr>
+          <h3>Download</h3>
+          <p>If you prefer you can download the JS containing Chameleon</p>
+          <a class="btn-top btn-large waves-effect waves-light btn green">
+            <i class="material-icons right">file_download</i>DOWNLOAD</a>
+          <h3>CDN</h3>
+          <p>You can use Chameleon Mask makeing a reference to our CDN, see all versions on <a href="">topcdn</a></p>
+              <pre class="line-numbers" data-language=" language-markup">
+<code class=" language-markup">&lt;!-- Compiled and minified JavaScript -->
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">&lt;/script></code>
+                </pre>
+          <h3>NPM</h3>
+          <p>You can also get the latest release using NPM. This release contains source files as well as the compiled CSS and JavaScript files.</p>
+              <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">npm install materialize-css@next
+import Chameleon from 'chameleon-mask-js';
+</code>
+                </pre>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer padding-menu menu-dep grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Chameleon Masks JS</h5>
+          <p class="grey-text text-lighten-4">
+            <i class="material-icons grey-text text-lighten-4 tiny" style="padding-right: 5px">email</i>Contato:
+            drprado2@gmail.com <br>
+            <i class="fab fa-github left grey-text text-lighten-4 tiny" style="margin-right: 0px; padding-right: 5px; transform: translateY(3px);"></i>Github:
+            https://github.com/drprado2/chamaleon-masks-js <br>
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links Úteis</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Customizar minha própria mascara</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">CPF/CNPJ/CEP/Telefone</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Data/Hora</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Multi Mascaras</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara Reversa</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara para Dinheiro</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara com limite de valores</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Todas as opções aceitas pelas mascaras</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Todos os direitos reservados Chameleon Masks JS
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./dist/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="./prism.js"></script>
+</body>
+
+</html>
