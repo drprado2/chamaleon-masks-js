@@ -1,0 +1,47 @@
+.title-complement{
+  font-size: 18px;
+  font-weight: 300;
+  color: #6d6d6d;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+.list-docs{
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.list-docs ul {
+  position: fixed;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+.list-docs ul li {
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+
+.list-docs ul li.active {
+  padding-left: 4px;
+  border-left: 4px solid #66bb6a;
+  transition: all .2s;
+}
+
+.list-docs ul li.active a{
+  text-decoration: underline;
+}
+
+.list-docs a {
+  color: #777777;
+  font-weight: 600;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 15px;
+}

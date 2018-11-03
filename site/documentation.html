@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+  <link href="../prism.css" rel="stylesheet" />
+  <link href="css/commom.css" rel="stylesheet" />
+  <link href="css/documentation.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chameleon Masks JS, Crie mascaras personalizadas para inputs HTML</title>
+</head>
+
+<body>
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#customizing">Customizing</a></li>
+    <li><a href="#cpf-cnpj-cep-phone">CPF/CNPJ/CEP/Phone</a></li>
+    <li><a href="#date-time">Date/Time</a></li>
+    <li><a href="#multi-mask">Multi Masks</a></li>
+    <li><a href="#reverse-mask">Reverse Mask</a></li>
+    <li><a href="#money-mask">Money Mask</a></li>
+    <li><a href="#limited-mask">Limited Mask</a></li>
+    <li><a href="#all-options">All Options</a></li>
+  </ul>
+  <header>
+    <nav class="bg-verde #01579b">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Chameleon JS</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="getting-started.html">Get Started</a></li>
+          <li class="active"><a class="dropdown-trigger" href="#!" data-target="dropdown1">Documentações<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="row">
+      <div class="col m8 offset-m2">
+          <h1 class="center">Documentations</h1>
+          <p class="center title-complement">Learn how to use Chameleon Masks JS and put masks in all your inputs.</p>
+          <hr>
+          <!--CUSTOMIZING-->
+        <div id="customizing" class="scrollspy">
+          <h3>Customizing</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--CPF/CNPJ/CEP/PHONE-->
+        <div id="cpf-cnpj-cep-phone" class="scrollspy">
+          <h3 >Brazilian CPF/CNPJ/CEP and Phone</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+
+        </div>
+        <!--DATE/TIME-->
+        <div id="date-time" class="scrollspy">
+          <h3>Date Time</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--MULTI MASK-->
+        <div id="multi-mask" class="scrollspy">
+          <h3 >Multi Masks</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--REVERSE MASK-->
+        <div id="reverse-mask" class="scrollspy">
+          <h3 >Reverse Mask</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--MONEY MASK-->
+        <div id="money-mask" class="scrollspy">
+          <h3>Money Mask</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--LIMITED MASK-->
+        <div id="limited-mask" class="scrollspy">
+          <h3>Limited Mask</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+        <!--ALL OPTIONS-->
+        <div id="all-options" class="scrollspy">
+          <h3>All Options</h3>
+          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
+            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
+            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
+            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
+            informar onde são números e outros caractéres para informar onde são mascaras.
+          </p>
+          <ul class="collection with-header">
+            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
+            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
+            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
+            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
+            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
+          </ul>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+</code>
+                </pre>
+        </div>
+      </div>
+      <div class="col m2">
+          <div class="list-docs">
+            <ul class="spy-links">
+              <li class="active"><a href="#customizing">Customizing</a></li>
+              <li><a href="#cpf-cnpj-cep-phone">CPF/CNPJ/CEP/Phone</a></li>
+              <li><a href="#date-time">Date/Time</a></li>
+              <li><a href="#multi-mask">Multi Masks</a></li>
+              <li><a href="#reverse-mask">Reverse Mask</a></li>
+              <li><a href="#money-mask">Money Mask</a></li>
+              <li><a href="#limited-mask">Limited Mask</a></li>
+              <li><a href="#all-options">All Options</a></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </main>
+  <footer class="page-footer padding-menu menu-dep grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Chameleon Masks JS</h5>
+          <p class="grey-text text-lighten-4">
+            <i class="material-icons grey-text text-lighten-4 tiny" style="padding-right: 5px">email</i>Contato:
+            drprado2@gmail.com <br>
+            <i class="fab fa-github left grey-text text-lighten-4 tiny" style="margin-right: 0px; padding-right: 5px; transform: translateY(3px);"></i>Github:
+            https://github.com/drprado2/chamaleon-masks-js <br>
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links Úteis</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Customizar minha própria mascara</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">CPF/CNPJ/CEP/Telefone</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Data/Hora</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Multi Mascaras</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara Reversa</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara para Dinheiro</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mascara com limite de valores</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Todas as opções aceitas pelas mascaras</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Todos os direitos reservados Chameleon Masks JS
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+  <script src="../prism.js"></script>
+  <script src="../src/regex-expressions.js"></script>
+  <script src="../src/defaultValues.js"></script>
+  <script src="../src/GenericNumberMask.js"></script>
+  <script src="../src/Mask.js"></script>
+  <script src="../src/MaskAplicator.js"></script>
+  <script src="../src/MaskHandler.js"></script>
+  <script src="../src/Chameleon.js"></script>
+  <script src="js/commom.js"></script>
+  <script src="js/documentation.js"></script>
+</body>
+
+</html>
