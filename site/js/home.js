@@ -1,5 +1,3 @@
-document.addEventListener('DOMContentLoaded',
-  function(){
     let reais = document.querySelector('#money-real');
     let dolar = document.querySelector('#money-dolar');
     let telephone = document.querySelector('#telephone');
@@ -31,6 +29,3 @@ document.addEventListener('DOMContentLoaded',
     Chameleon.init(cpfCnpj, "99.999.999/9999-99", "999.999.999-99");
     Chameleon.initOptions(date, { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
     Chameleon.initOptions(hour, { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
-  }
-  , false);
-

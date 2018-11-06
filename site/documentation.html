@@ -41,7 +41,7 @@
   </header>
   <main>
     <div class="row">
-      <div class="col m8 offset-m2">
+      <div class="col m10 l9 xl8 offset-m0 offset-l1 offset-xl2">
           <h1 class="center">Documentations</h1>
           <p class="center title-complement">Learn how to use Chameleon Masks JS and put masks in all your inputs.</p>
           <hr>
@@ -61,6 +61,11 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">build</i>
+            <input id="custom-input" name="custom-input" type="text" />
+            <label for="custom-input">Custom</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -82,6 +87,26 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input class="my-clas" id="cpf" name="cpf" type="text" />
+            <label for="cpf">CPF</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">account_balance</i>
+            <input id="cnpj" name="cnpj" type="text" />
+            <label for="cnpj">CNPJ</label>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-map-marked-alt prefix"></i>
+            <input id="cep" name="cep" type="text" />
+            <label for="cep">CEP</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">local_phone</i>
+            <input id="telephone" name="telephone" type="text" />
+            <label for="telephone">Telefone</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -104,6 +129,16 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">date_range</i>
+            <input id="date" name="date" type="text" />
+            <label for="date">Data</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">watch_later</i>
+            <input id="hour" name="hour" type="text" />
+            <label for="hour">Hora</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -125,6 +160,16 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input id="cpf-cnpj" name="cpf-cnpj" type="text" />
+            <label for="cpf-cnpj">CPF/CNPJ</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">local_phone</i>
+            <input id="telephone-multi" name="telephone-multi" type="text" />
+            <label for="telephone-multi">Telefone 8/9 Dígitos</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -146,6 +191,11 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input class="my-clas" id="cpf" name="cpf" type="text" />
+            <label for="cpf">CPF</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -167,6 +217,16 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input class="my-clas validate" id="money-real" name="money-real" type="text" />
+            <label for="money-real">Dinheiro Reais R$</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input class="my-clas validate" id="money-dolar" name="money-dolar" type="text" />
+            <label for="money-dolar">Dinheiro Dolar $</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>
@@ -188,6 +248,16 @@
             <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
             <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
           </ul>
+          <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input class="my-clas validate" id="money-real" name="money-real" type="text" />
+            <label for="money-real">Dinheiro Reais R$</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input class="my-clas validate" id="money-dolar" name="money-dolar" type="text" />
+            <label for="money-dolar">Dinheiro Dolar $</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
 </code>

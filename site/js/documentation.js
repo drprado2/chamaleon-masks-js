@@ -5,4 +5,11 @@ document.addEventListener('DOMContentLoaded', function(){
       Array.prototype.forEach.call(allActived, i => i.classList.remove('active'));
       currentElement.parentElement.classList.add('active');
     });
+
+    startMasks();
 })
+
+function startMasks(){
+  let customInput = document.querySelector('#custom-input');
+  Chameleon.init(customInput, '012345-CUS-6789-TOM');
+}
