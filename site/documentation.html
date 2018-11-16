@@ -54,7 +54,7 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
+          <ul class="collection with-header" style="margin-bottom: 25px">
             <li class="collection-header"><h5>Caracteres/Significados</h5></li>
             <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
             <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
@@ -67,26 +67,16 @@
             <label for="custom-input">Custom</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+<code class=" language-javascript">Chameleon.init('#custom-input', '012345-CUS-6789-TOM');
 </code>
                 </pre>
         </div>
         <!--CPF/CNPJ/CEP/PHONE-->
         <div id="cpf-cnpj-cep-phone" class="scrollspy">
-          <h3 >Brazilian CPF/CNPJ/CEP and Phone</h3>
-          <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
-            O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
-            a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
-            Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
-            informar onde são números e outros caractéres para informar onde são mascaras.
+          <h3 >Brazilian CPF/CNPJ/CEP, Phone, Credit Card and Valid Date</h3>
+          <p>
+            Com mascaras simples você consegue criar mascaras de documentos, telefone e qualquer outra que você precise
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
             <i class="material-icons prefix">assignment_ind</i>
             <input class="my-clas" id="cpf" name="cpf" type="text" />
@@ -107,9 +97,23 @@
             <input id="telephone" name="telephone" type="text" />
             <label for="telephone">Telefone</label>
           </div>
+          <div class="input-field">
+            <i class="material-icons prefix">credit_card</i>
+            <input id="credit-card" name="credit-card" type="text" />
+            <label for="credit-card">Número cartão de crédito</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">event_available</i>
+            <input id="cred-card-valid" name="cred-card-valid" type="text" />
+            <label for="cred-card-valid">Data de validade cartão de crédito</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">Chameleon.init('#cpf', '999.999.999-99');
+Chameleon.init('#cnpj', '99.999.999/0001-99');
+Chameleon.init('#cep', '99999-999');
+Chameleon.init('#telephone', '(99) 99999-9999');
+Chameleon.init('#credit-card', '9999 9999 9999 9999');
+Chameleon.init('#cred-card-valid', '99/99');</code>
                 </pre>
 
         </div>
@@ -122,13 +126,6 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
             <i class="material-icons prefix">date_range</i>
             <input id="date" name="date" type="text" />
@@ -140,8 +137,8 @@
             <label for="hour">Hora</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">Chameleon.initOptions('#date', {masks: [{mask: '99/99/9999', placeholder: 'DD/MM/YYYY'}]});
+Chameleon.initOptions('#hour', {masks: [{mask: '99:99:99', placeholder: 'HH:MM:SS'}]});</code>
                 </pre>
         </div>
         <!--MULTI MASK-->
@@ -153,13 +150,6 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
             <i class="material-icons prefix">assignment_ind</i>
             <input id="cpf-cnpj" name="cpf-cnpj" type="text" />
@@ -170,9 +160,15 @@
             <input id="telephone-multi" name="telephone-multi" type="text" />
             <label for="telephone-multi">Telefone 8/9 Dígitos</label>
           </div>
+          <div class="input-field">
+            <i class="material-icons prefix">event_note</i>
+            <input id="multi-date" name="multi-date" type="text" />
+            <label for="multi-date">Data com ano 2/4 digitos</label>
+          </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">Chameleon.init('#cpf-cnpj', '999.999.999-99', '99.999.999/0001-99');
+Chameleon.init('#telephone-multi', '(99) 9999-9999', '(99) 99999-9999');
+Chameleon.initOptions('#multi-date', {masks: [{mask: '99/99/99', placeholder: 'DD/MM/YY'}, {mask: '99/99/9999', placeholder: 'DD/MM/YYYY'}]});</code>
                 </pre>
         </div>
         <!--REVERSE MASK-->
@@ -184,21 +180,13 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
-            <i class="material-icons prefix">assignment_ind</i>
-            <input class="my-clas" id="cpf" name="cpf" type="text" />
-            <label for="cpf">CPF</label>
+            <i class="material-icons prefix">date_range</i>
+            <input class="my-clas" id="reverse-date" name="reverse-date" type="text" />
+            <label for="reverse-date">Reverse Date</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">Chameleon.initOptions('#reverse-date', {masks: [{mask: '99/99/9999', placeholder: 'YYYY/MM/DD'}], reverseInput: true});</code>
                 </pre>
         </div>
         <!--MONEY MASK-->
@@ -210,13 +198,6 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
             <i class="material-icons prefix">monetization_on</i>
             <input class="my-clas validate" id="money-real" name="money-real" type="text" />
@@ -228,8 +209,20 @@
             <label for="money-dolar">Dinheiro Dolar $</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">Chameleon.initOptions('#money-real',
+{
+  reverseInput: true,
+  masks: [
+    { mask: ".***,99", isMoney: true, moneyCountryMask: 'R$' }
+  ]
+});
+Chameleon.initOptions('#money-dolar',
+{
+  reverseInput: true,
+  masks: [
+    { mask: ",***.99", isMoney: true, moneyCountryMask: '$' }
+  ]
+});</code>
                 </pre>
         </div>
         <!--LIMITED MASK-->
@@ -241,22 +234,20 @@
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
           <div class="input-field">
-            <i class="material-icons prefix">monetization_on</i>
-            <input class="my-clas validate" id="money-real" name="money-real" type="text" />
-            <label for="money-real">Dinheiro Reais R$</label>
+            <i class="material-icons prefix">date_range</i>
+            <input class="my-clas validate" id="limited-date" name="limited-date" type="text" />
+            <label for="limited-date">Data Limitada</label>
           </div>
           <div class="input-field">
-            <i class="material-icons prefix">monetization_on</i>
-            <input class="my-clas validate" id="money-dolar" name="money-dolar" type="text" />
-            <label for="money-dolar">Dinheiro Dolar $</label>
+            <i class="material-icons prefix">hourglass_empty</i>
+            <input class="my-clas validate" id="limited-time" name="limited-time" type="text" />
+            <label for="limited-time">Horas Limitadas</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">swap_horiz</i>
+            <input class="my-clas validate" id="limited-custom" name="limited-custom" type="text" />
+            <label for="limited-custom">Valor limitado</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
@@ -337,13 +328,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
   <script src="../prism.js"></script>
-  <script src="../src/regex-expressions.js"></script>
-  <script src="../src/defaultValues.js"></script>
-  <script src="../src/GenericNumberMask.js"></script>
-  <script src="../src/Mask.js"></script>
-  <script src="../src/MaskAplicator.js"></script>
-  <script src="../src/MaskHandler.js"></script>
-  <script src="../src/Chameleon.js"></script>
+  <script src="../dist/cdn-version.js"></script>
   <script src="js/commom.js"></script>
   <script src="js/documentation.js"></script>
 </body>

@@ -1,3 +1,7 @@
+input {
+  margin-top: 10px;
+}
+
 .my-container {
   margin: 0 auto;
   padding-left: 0px;
