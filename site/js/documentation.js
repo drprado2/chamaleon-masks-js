@@ -40,3 +40,7 @@ Chameleon.initOptions('#money-dolar',
     { mask: ",***.99", isMoney: true, moneyCountryMask: '$' }
   ]
 });
+
+Chameleon.initOptions('#limited-date', { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
+Chameleon.initOptions('#limited-custom', { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
+Chameleon.init('#limited-custom', '99[0-6].999[800-999].999[500-600]-99[10-50]');

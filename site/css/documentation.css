@@ -45,3 +45,13 @@ p {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   font-size: 15px;
 }
+
+#all-options table td,
+#all-options table th {
+  padding-right: 15px;
+}
+
+#all-options table td:last-child,
+#all-options table th:last-child {
+  padding-right: 0px;
+}

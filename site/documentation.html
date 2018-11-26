@@ -47,7 +47,7 @@
           <hr>
           <!--CUSTOMIZING-->
         <div id="customizing" class="scrollspy">
-          <h3>Customizing</h3>
+          <h3 class="underline-title">Customizing</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -73,7 +73,7 @@
         </div>
         <!--CPF/CNPJ/CEP/PHONE-->
         <div id="cpf-cnpj-cep-phone" class="scrollspy">
-          <h3 >Brazilian CPF/CNPJ/CEP, Phone, Credit Card and Valid Date</h3>
+          <h3 class="underline-title">Brazilian CPF/CNPJ/CEP, Phone, Credit Card and Valid Date</h3>
           <p>
             Com mascaras simples você consegue criar mascaras de documentos, telefone e qualquer outra que você precise
           </p>
@@ -119,7 +119,7 @@ Chameleon.init('#cred-card-valid', '99/99');</code>
         </div>
         <!--DATE/TIME-->
         <div id="date-time" class="scrollspy">
-          <h3>Date Time</h3>
+          <h3 class="underline-title">Date Time</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -143,7 +143,7 @@ Chameleon.initOptions('#hour', {masks: [{mask: '99:99:99', placeholder: 'HH:MM:S
         </div>
         <!--MULTI MASK-->
         <div id="multi-mask" class="scrollspy">
-          <h3 >Multi Masks</h3>
+          <h3 class="underline-title">Multi Masks</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -173,7 +173,7 @@ Chameleon.initOptions('#multi-date', {masks: [{mask: '99/99/99', placeholder: 'D
         </div>
         <!--REVERSE MASK-->
         <div id="reverse-mask" class="scrollspy">
-          <h3 >Reverse Mask</h3>
+          <h3 class="underline-title">Reverse Mask</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -191,7 +191,7 @@ Chameleon.initOptions('#multi-date', {masks: [{mask: '99/99/99', placeholder: 'D
         </div>
         <!--MONEY MASK-->
         <div id="money-mask" class="scrollspy">
-          <h3>Money Mask</h3>
+          <h3 class="underline-title">Money Mask</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -227,7 +227,7 @@ Chameleon.initOptions('#money-dolar',
         </div>
         <!--LIMITED MASK-->
         <div id="limited-mask" class="scrollspy">
-          <h3>Limited Mask</h3>
+          <h3 class="underline-title">Limited Mask</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
@@ -250,28 +250,93 @@ Chameleon.initOptions('#money-dolar',
             <label for="limited-custom">Valor limitado</label>
           </div>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
-</code>
+<code class=" language-javascript">// Aqui limitamos para só aceitar um valor entre 1 e 31 nos dias, entre 1 e 12 no mês e entre 1920 e 2018 no ano
+Chameleon.initOptions('#limited-date', { masks: [{ mask: "99[1-31]/99[1-12]/9999[1920-2018]", placeholder: 'DD/MM/YYYY' }] });
+// Aqui limitamos para a hora estar entre 0 e 24 e os minutos entre 0 e 60
+Chameleon.initOptions('#limited-custom', { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
+// Aqui temos um campo onde os 2 primeiros digitos devem estar entre 0 e 15, depois 800 e 999, depois 500 e 600 e por ultimo 10 e 50
+Chameleon.init('#limited-custom', '99[0-15].999[800-999].999[500-600]-99[10-50]');</code>
                 </pre>
         </div>
         <!--ALL OPTIONS-->
         <div id="all-options" class="scrollspy">
-          <h3>All Options</h3>
+          <h3 class="underline-title">All Options</h3>
           <p>Você pode customizar uma mascara conforme a sua necessidade. <br>
             O objeto Chameleon possui o método init, esse método por sua vez recebe como primeiro parâmetro o input que receberá
             a mascará e uma ou mais mascaras como segundo parâmetro em diante. <br>
             Lembre-se que as mascaras são exclusivamente númericas logo na hora de configurar a mascara você deve usar números para
             informar onde são números e outros caractéres para informar onde são mascaras.
           </p>
-          <ul class="collection with-header">
-            <li class="collection-header"><h5>Caracteres/Significados</h5></li>
-            <li class="collection-item"><strong> 0,1,2,3,4,5,6,7,8,9: </strong> - São caracteres válidos para configurar sua mascara e serão considerados parte númerica da mascara</li>
-            <li class="collection-item"><strong>* :</strong> - O asterísco é usado para informar parte da mascara que repete infinitamente</li>
-            <li class="collection-item"><strong>9[x-y] :</strong> - Os colchetes com números dentro separádos por hífen logo após um bloco de mascara é um limitador de valor do bloco</li>
-            <li class="collection-item"><strong>Qualquer outro char :</strong> - Qualquer outro caracter será considerado parte da mascara</li>
-          </ul>
+          <h5>Options</h5>
+          <table class="">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>submitWithMask</td>
+                <td>Boolean</td>
+                <td>true</td>
+                <td>O value do input será com a mascara, caso você deseje o valor sem a mascara será criado um input clone que ficará visível, o input principal ficará invisível e conterá o valor ser a mascara</td>
+              </tr>
+              <tr>
+                <td>reverseInput</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>Caso seja setado como true, o input irá preencher os valores de traz para frente, sendo digitado bloco por bloco, igual com dinheiro, centavos depois centenas depois centenas de milhares</td>
+              </tr>
+              <tr>
+                <td>masks</td>
+                <td>Array of Object</td>
+                <td>[{mask: "(99) 9999-9999", validationCallback: (inputValue) => true , isMoney: false, moneyCountryMask: 'R$'}]</td>
+                <td>Você pode setar uma lista de configurações de mascaras também, sendo cada configuração um objeto conforme o objeto mostrado a baixo.</td>
+              </tr>
+            </tbody>
+          </table>
+          <h5>Mask Config</h5>
+          <table class="">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>mask</td>
+                <td>String</td>
+                <td>"(99) 9999-9999"</td>
+                <td>É aqui que você configura o formato da máscara</td>
+              </tr>
+              <tr>
+                <td>validationCallback</td>
+                <td>Function</td>
+                <td>(inputValue) => true</td>
+                <td>Função de callback que é chamada toda vez que o evento change do input ocorre, pode ser utilizada para validar o valor</td>
+              </tr>
+              <tr>
+                <td>isMoney</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>Deve ser setado como true quando a mascara for de dinheiro, será utilizado para posicionar o cifrão corretamente</td>
+              </tr>
+              <tr>
+                <td>moneyCountryMask</td>
+                <td>String</td>
+                <td>'R$'</td>
+                <td>O cifrão deve ser usado em conjunto com isMoney para compor a mascará para moedas.</td>
+              </tr>
+            </tbody>
+          </table>
           <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">// Criando uma mascará que vai receber 3 números, depois colocará 1 ponto, depois mais 4 números e colocará um traço depois
+<code class=" language-javascript">Chameleon.initOptions('CSS Selector OR NodeElementObj', {Parameters})
 </code>
                 </pre>
         </div>

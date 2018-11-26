@@ -31,7 +31,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+  font-weight: 500;
+}
+
+.underline-title {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-title:after {
+  content: "";
+  width: 60%;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  height: 6px;
+  background-color: #4caf50;
 }
 
 strong {
@@ -141,4 +156,32 @@ pre[class*="language-"]{
 
 #nav-mobile {
   margin-right: 15px;
+}
+
+hr {
+  border-color: #4caf50;
+  position: relative;
+}
+
+hr:before{
+  position: absolute;
+  top: -2px;
+  left: calc(50% - 32px);
+  width: 32px;
+  height: 3px;
+  background-color: white;
+  content: "";
+}
+
+hr:after{
+  position: absolute;
+  top: -14px;
+  left: calc(50% - 28px);
+  width: 25px;
+  height: 25px;
+  background-image: url("../img/chameleon.svg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  content: "";
 }
