@@ -41,7 +41,7 @@ h6 {
 
 .underline-title:after {
   content: "";
-  width: 60%;
+  width: 40%;
   position: absolute;
   bottom: 16px;
   left: 0;
