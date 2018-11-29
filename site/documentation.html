@@ -170,6 +170,22 @@ Chameleon.init('#telephone-multi', '(99) 9999-9999', '(99) 99999-9999');
 Chameleon.initOptions('#multi-date', {masks: [{mask: '99/99/99', placeholder: 'DD/MM/YY'}, {mask: '99/99/9999', placeholder: 'DD/MM/YYYY'}]});</code>
                 </pre>
         </div>
+        <!--INFINIT MASK-->
+        <div id="infinit-mask" class="scrollspy">
+          <h3 class="underline-title">Mascaras Infinitas</h3>
+          <p>Com a mascara infinita podemos montar uma mascara que aceitará valores infinitos apenas usando o caracter
+            * (asterísco), porém cada vez que fechar um bloco ela colocara nossa mascara.
+          </p>
+          <div class="input-field">
+            <i class="material-icons prefix">all_inclusive</i>
+            <input class="my-clas" id="infinit" name="infinit" type="text" />
+            <label for="infinit">Campo Infinito Custom</label>
+          </div>
+          <pre class="line-numbers" data-language="language-javascript">
+<code class="language-javascript">// Veja que a cada 3 números (***) será adicionado o bloco de mascara (-INFINITO-) e isso continuará a crescer sem limítes
+  Chameleon.init(infinit, "999.99-***-INFINITO-");</code>
+            </pre>
+        </div>
         <!--REVERSE MASK-->
         <div id="reverse-mask" class="scrollspy">
           <h3 class="underline-title">Reverse Mask</h3>
@@ -255,6 +271,29 @@ Chameleon.initOptions('#limited-date', { masks: [{ mask: "99[1-31]/99[1-12]/9999
 Chameleon.initOptions('#limited-custom', { masks: [{ mask: "99[0-24]:99[0-60]", placeholder: 'HH:MM' }] });
 // Aqui temos um campo onde os 2 primeiros digitos devem estar entre 0 e 15, depois 800 e 999, depois 500 e 600 e por ultimo 10 e 50
 Chameleon.init('#limited-custom', '99[0-15].999[800-999].999[500-600]-99[10-50]');</code>
+                </pre>
+        </div>
+        <!--COMBINING OPTIONS-->
+        <div id="combining-mask" class="scrollspy">
+          <h3 class="underline-title">Combinando Opções</h3>
+          <p>Você pode combinar as configurações de mascara para montar a mascara que você precisa. <br>
+             Como a mascara reversa e o limite de range, ou a mascara reversa e a mascara infinita.
+          </p>
+          <div class="input-field">
+            <i class="material-icons prefix">date_range</i>
+            <input class="my-clas validate" id="mix-date" name="mix-date" type="text" />
+            <label for="mix-date">Data Reversa e Limitada</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">content_cut</i>
+            <input class="my-clas validate" id="mix-mult-infit" name="mix-mult-infit" type="text" />
+            <label for="mix-mult-infit">Multi Mascara Infinita</label>
+          </div>
+          <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">// Perceba que além de limitarmos a data entre 2018 e 2020 ainda recebemos o ano depois o mês e depois o dia
+  Chameleon.initOptions('#mix-date', { masks: [{ mask: "99[1-31]/99[1-12]/9999[2018-2020]", placeholder: 'YYYY/MM/DD' }],reverseInput: true});
+// Perceba a loucura que fazemos aqui, temos 2 mascaras a segunda altera a primeira completamente, e ainda é infinita
+Chameleon.initOptions('#mix-mult-infit', { masks: [{ mask: "999-999_99" },{ mask: "999-CHANGE-999+99@***@" }]});</code>
                 </pre>
         </div>
         <!--ALL OPTIONS-->
@@ -347,9 +386,11 @@ Chameleon.init('#limited-custom', '99[0-15].999[800-999].999[500-600]-99[10-50]'
               <li><a href="#cpf-cnpj-cep-phone">CPF/CNPJ/CEP/Phone</a></li>
               <li><a href="#date-time">Date/Time</a></li>
               <li><a href="#multi-mask">Multi Masks</a></li>
+              <li><a href="#infinit-mask">Infinit Mask</a></li>
               <li><a href="#reverse-mask">Reverse Mask</a></li>
               <li><a href="#money-mask">Money Mask</a></li>
               <li><a href="#limited-mask">Limited Mask</a></li>
+              <li><a href="#combining-mask">Combining Options</a></li>
               <li><a href="#all-options">All Options</a></li>
             </ul>
           </div>
