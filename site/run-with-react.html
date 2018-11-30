@@ -23,8 +23,8 @@
         <a href="index.html" class="brand-logo">Chameleon JS</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="getting-started.html">Get Started</a></li>
-          <li><a href="run-with-react.html">React</a></li>
+          <li><a href="getting-started.html">Get Started</a></li>
+          <li class="active"><a href="run-with-react.html">React</a></li>
           <li><a href="documentation.html">Documentações</a></li>
         </ul>
       </div>
@@ -33,25 +33,41 @@
   <main>
     <div class="row container">
       <div class="col-m-12">
-          <h1 class="center">Getting Started</h1>
-          <p class="center title-complement">Learn how to easily start using Chameleon Mask in your project.</p>
+          <h1 class="center">Run With React</h1>
+          <p class="center title-complement">Veja como é simples colocar máscaras nos seus inputs em React.</p>
           <hr>
-          <h3 class="underline-title">Download</h3>
-          <p>If you prefer you can download the JS containing Chameleon</p>
-          <a class="btn-top btn-large waves-effect waves-light btn green">
-            <i class="material-icons right">file_download</i>DOWNLOAD</a>
-          <br>
-          <h3 class="underline-title">CDN</h3>
-          <p>You can use Chameleon Mask makeing a reference to our CDN, see all versions on <a href="">topcdn</a></p>
-              <pre class="line-numbers" data-language=" language-markup">
-<code class=" language-markup">&lt;!-- Compiled and minified JavaScript -->
-&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">&lt;/script></code>
-                </pre>
-          <h3 class="underline-title">NPM</h3>
-          <p>You can also get the latest release using NPM. This release contains source files as well as the compiled CSS and JavaScript files.</p>
+          <h3 class="underline-title">Code</h3>
+          <p><strong>1</strong> - Fazer a instalação do pacote pelo Npm</p>
               <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">npm install materialize-css@next
-import Chameleon from 'chameleon-mask-js';
+</code>
+                </pre>
+          <p><strong>2</strong> - Importar no seu componente a classe Chameleon</p>
+              <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">import Chameleon from 'chameleon-mask-js';
+</code>
+                </pre>
+          <p><strong>3</strong> - Utilizando a feature de <u>Ref</u> do React podemos facilmente adicionar a máscara ao nosso input.</p>
+              <pre class="line-numbers" data-language=" language-react-javascript">
+<code class=" language-javascript">class InputMask extends Component {
+
+  constructor(props) {
+      super(props);
+      this.myRef = React.createRef();
+  }
+
+  componentDidMount(){
+      Chameleon.init(this.myRef.current, '999.999.999-99', '99.999.999/0001-99');
+  }
+
+  render() {
+      return (
+        &#60;div&#62;
+          &#60;input ref={this.myRef} type="text"/&#62;
+        &#60;/div&#62;
+      );
+  }
+}
 </code>
                 </pre>
       </div>
