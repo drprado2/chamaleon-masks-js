@@ -24,8 +24,8 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
           <li><a href="getting-started.html">Get Started</a></li>
-          <li class="active"><a href="run-with-react.html">React</a></li>
-          <li><a href="run-with-angular.html">Angular</a></li>
+          <li><a href="run-with-react.html">React</a></li>
+          <li class="active"><a href="run-with-angular.html">Angular</a></li>
           <li><a href="documentation.html">Documentações</a></li>
         </ul>
       </div>
@@ -34,40 +34,29 @@
   <main>
     <div class="row container">
       <div class="col-m-12">
-          <h1 class="center">Run With React</h1>
-          <p class="center title-complement">Veja como é simples colocar máscaras nos seus inputs em React.</p>
+          <h1 class="center">Run With Angular</h1>
+          <p class="center title-complement">Veja como é simples colocar máscaras nos seus inputs em Angular.</p>
           <hr>
           <h3 class="underline-title">Code</h3>
           <p><strong>1</strong> - Fazer a instalação do pacote pelo Npm</p>
               <pre class="line-numbers" data-language=" language-javascript">
-<code class=" language-javascript">npm install materialize-css@next
+<code class=" language-javascript">npm install chameleon-mask-js
 </code>
                 </pre>
-          <p><strong>2</strong> - Importar no seu componente a classe Chameleon</p>
+          <p><strong>2</strong> - Importar no seu componente.ts a classe Chameleon</p>
               <pre class="line-numbers" data-language=" language-javascript">
 <code class=" language-javascript">import Chameleon from 'chameleon-mask-js';
 </code>
                 </pre>
-          <p><strong>3</strong> - Utilizando a feature de <u>Ref</u> do React podemos facilmente adicionar a máscara ao nosso input.</p>
-              <pre class="line-numbers" data-language=" language-react-javascript">
-<code class=" language-javascript">class InputMask extends Component {
-
-  constructor(props) {
-      super(props);
-      this.myRef = React.createRef();
-  }
-
-  componentDidMount(){
-      Chameleon.init(this.myRef.current, '999.999.999-99', '99.999.999/0001-99');
-  }
-
-  render() {
-      return (
-        &#60;div&#62;
-          &#60;input ref={this.myRef} type="text"/&#62;
-        &#60;/div&#62;
-      );
-  }
+          <p><strong>3</strong> - Criar o input no template html, de tal maneira que seja possível selecionar ele com um seletor CSS.</p>
+              <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">&#60;input type="text" name="phone" id="phone" [(ngModel)]="myVarPhone" /&#62;
+</code>
+                </pre>
+          <p><strong>4</strong> - Na função <u>ngOnInit()</u> do seu componente ligar a mascara.</p>
+              <pre class="line-numbers" data-language=" language-javascript">
+<code class=" language-javascript">ngOnInit() {
+  Chameleon.init('#phone', '(99) 9999-9999', '(99) 99999-9999');
 }
 </code>
                 </pre>
