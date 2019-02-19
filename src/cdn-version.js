@@ -221,6 +221,7 @@ MaskAplicator.prototype.createCloneInput = function(){
 const MaskHandler = function(input, options=DEFAULT_OPTIONS){
   if(!input)
       throw new Error("Should be passed a valid input!")
+  let currentValue = input.value;
   options = options instanceof Object ? {...DEFAULT_OPTIONS, ...options} : DEFAULT_OPTIONS;
   options.masks = options.masks.map(m => ({...DEFAULT_MASK_CONFIG, placeholder: m.mask.replace(regexExpressions.RANGES, ''), ...m}));
   this.maskAplicator = new MaskAplicator(input, options.reverseInput, options.submitWithMask);
@@ -230,7 +231,7 @@ const MaskHandler = function(input, options=DEFAULT_OPTIONS){
   this.currentMask = this.masks[0];
   this.setPlaceholder();
   this.addListener();
-  this.maskAplicator.applyValue(this, '');
+  this.maskAplicator.applyValue(this, currentValue);
 }
 MaskHandler.prototype.addMask = function(mask){
   let shouldBeTheFirst = this.masks.length === 0 || this.masks[0].valueLength > mask.valueLength;
@@ -264,15 +265,19 @@ MaskHandler.prototype.updateCurrentMask = function(inputValue){
 
 const Chameleon = {
   initOptions : function(input, options=DEFAULT_OPTIONS){
-    if(Object.getPrototypeOf(input) == String.prototype)
-      input = document.querySelector(input);
-    new MaskHandler(input, options);
+    if(Object.getPrototypeOf(input) == String.prototype){
+      Array.prototype.forEach.call(document.querySelectorAll(input), x => new MaskHandler(x, options));
+    }else{
+      new MaskHandler(input, options);
+    }
   },
   init: function(input, ...masks){
-    if(Object.getPrototypeOf(input) == String.prototype)
-      input = document.querySelector(input);
     let options = {...DEFAULT_OPTIONS};
     options.masks = masks.map(m => ({...DEFAULT_MASK_CONFIG, mask: m}));
-    new MaskHandler(input, options);
+    if(Object.getPrototypeOf(input) == String.prototype){
+      Array.prototype.forEach.call(document.querySelectorAll(input), x => new MaskHandler(x, options));
+    }else{
+      new MaskHandler(input, options);
+    }
   }
 };

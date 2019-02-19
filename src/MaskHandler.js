@@ -6,6 +6,7 @@ import {DEFAULT_OPTIONS, DEFAULT_MASK_CONFIG} from './defaultValues';
 const MaskHandler = function(input, options=DEFAULT_OPTIONS){
   if(!input)
       throw new Error("Should be passed a valid input!")
+  let currentValue = input.value;
   options = options instanceof Object ? {...DEFAULT_OPTIONS, ...options} : DEFAULT_OPTIONS;
   options.masks = options.masks.map(m => ({...DEFAULT_MASK_CONFIG, placeholder: m.mask.replace(regexExpressions.RANGES, ''), ...m}));
   this.maskAplicator = new MaskAplicator(input, options.reverseInput, options.submitWithMask);
@@ -15,7 +16,7 @@ const MaskHandler = function(input, options=DEFAULT_OPTIONS){
   this.currentMask = this.masks[0];
   this.setPlaceholder();
   this.addListener();
-  this.maskAplicator.applyValue(this, '');
+  this.maskAplicator.applyValue(this, currentValue);
 }
 MaskHandler.prototype.addMask = function(mask){
   let shouldBeTheFirst = this.masks.length === 0 || this.masks[0].valueLength > mask.valueLength;
